@@ -1,0 +1,1011 @@
+/* =========================================================
+   GLOBAL VARIABLES
+========================================================= */
+
+:root {
+    --color-primary: #ffd000;
+    --color-background: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #111111;
+    --color-text-muted: #666666;
+    --color-border: #e5e5e5;
+
+    --color-overlay: rgba(255, 255, 255, 0.96);
+
+    --shadow-dropdown:
+        0 10px 30px rgba(0, 0, 0, 0.10);
+
+    --header-height: 72px;
+
+    --radius-small: 6px;
+    --radius-medium: 8px;
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+
+/* =========================================================
+   DARK THEME VARIABLES
+========================================================= */
+
+:root[data-theme="dark"] {
+    --color-background: #111111;
+    --color-surface: #111111;
+    --color-text: #f5f5f5;
+    --color-text-muted: #aaaaaa;
+    --color-border: #333333;
+
+    --color-overlay: rgba(17, 17, 17, 0.96);
+
+    --shadow-dropdown:
+        0 10px 30px rgba(0, 0, 0, 0.40);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.lazlo-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: var(--bg-dark);
+
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+        transform var(--transition-normal),
+        background-color var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.lazlo-header.hidden {
+    transform: translateY(-100%);
+}
+
+
+/* =========================================================
+   HEADER MAIN
+========================================================= */
+
+.lazlo-header__main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+
+    height: var(--header-height);
+
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    column-gap: 30px;
+
+    padding: 0 40px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.lazlo-header__logo {
+    justify-self: start;
+
+    background: var(--brand-gradient);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    font-family: "Electrolize", sans-serif;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: color var(--transition-fast);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.lazlo-header__navigation {
+    min-width: 0;
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+
+.lazlo-header__navigation a {
+    flex-shrink: 1;
+
+    color: var(--text);
+
+    font-family: "Electrolize", sans-serif;
+    font-size: 14px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.lazlo-header__navigation a:hover {
+    background: var(--brand-gradient);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.lazlo-header__actions {
+    justify-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: max-content;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.lazlo-header__search {
+    position: relative;
+}
+
+.lazlo-header__search-form {
+    display: flex;
+
+    align-items: center;
+}
+
+.lazlo-header__search-input {
+    width: 180px;
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--color-border);
+    border-right: none;
+
+    border-radius:
+        var(--radius-small) 0 0 var(--radius-small);
+
+    outline: none;
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    font-family: "Electrolize", sans-serif;
+    font-size: 13px;
+}
+
+.lazlo-header__search-input:focus {
+    border-color: var(--color-primary);
+}
+
+.lazlo-header__search-button {
+    height: 38px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--color-text);
+
+    border-radius:
+        0 var(--radius-small) var(--radius-small) 0;
+
+    background: var(--color-text);
+    color: var(--color-background);
+
+    font-family: "Electrolize", sans-serif;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.lazlo-header__search-button:hover {
+    background: var(--brand-gradient);
+    color: #111111;
+
+    border-color: var(--color-border);
+}
+
+.lazlo-header__search-form,
+.lazlo-header__mobile-search form {
+    direction: ltr;
+}
+
+[dir="rtl"] .lazlo-header__search-input,
+[dir="rtl"] .lazlo-header__mobile-search input {
+    direction: rtl;
+    text-align: right;
+}
+
+
+
+/* =========================================================
+   DESKTOP SEARCH RESULTS
+========================================================= */
+
+.lazlo-header__search-results {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 310px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-dropdown);
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity var(--transition-fast),
+        visibility var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.lazlo-header__search-results.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SEARCH RESULT ITEMS
+========================================================= */
+
+.lazlo-header__search-results a,
+.lazlo-header__mobile-search-results a {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    color: var(--color-text);
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+        background-color var(--transition-fast);
+}
+
+.lazlo-header__search-results a:hover,
+.lazlo-header__mobile-search-results a:hover {
+    background: rgba(255, 208, 0, 0.12);
+}
+
+
+/* Remove border from final product before button */
+
+.lazlo-header__search-results a:nth-of-type(5),
+.lazlo-header__mobile-search-results a:nth-of-type(5) {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   SEARCH RESULT IMAGES
+========================================================= */
+
+.lazlo-header__search-results a>img,
+.lazlo-header__mobile-search-results a>img {
+    flex: 0 0 52px;
+
+    width: 52px;
+    height: 52px;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 5px;
+
+    background: var(--color-background);
+}
+
+
+/* =========================================================
+   SEARCH RESULT TEXT
+========================================================= */
+
+.lazlo-header__search-results a>div,
+.lazlo-header__mobile-search-results a>div {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 4px;
+}
+
+.lazlo-header__search-results strong,
+.lazlo-header__mobile-search-results strong {
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.lazlo-header__search-results span,
+.lazlo-header__mobile-search-results span {
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   SEE ALL RESULTS BUTTON
+========================================================= */
+
+.lazlo-header__search-see-all,
+.lazlo-header__mobile-search-see-all {
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 11px 15px !important;
+
+    border-bottom: none !important;
+
+    background: var(--color-surface);
+
+    color: var(--color-text) !important;
+
+    font-family: "Electrolize", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+    text-align: center;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.lazlo-header__search-see-all:hover,
+.lazlo-header__mobile-search-see-all:hover {
+    background: var(--color-text) !important;
+
+    color: var(--color-background) !important;
+}
+
+
+/* =========================================================
+   MOBILE SEARCH ICON
+========================================================= */
+
+.lazlo-header__search-icon {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+    color: var(--color-text);
+
+    cursor: pointer;
+}
+
+.lazlo-header__search-icon svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.lazlo-header__theme {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-small);
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.lazlo-header__theme:hover {
+    background: var(--color-text);
+    color: var(--color-background);
+}
+
+.lazlo-header__theme svg {
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+}
+
+.lazlo-header__moon {
+    display: none;
+}
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+.lazlo-header__language {
+    position: relative;
+}
+
+.lazlo-header__language-toggle {
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 0 9px;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-small);
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    font-family: "Electrolize", sans-serif;
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.lazlo-header__language-arrow {
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+
+    transition:
+        transform var(--transition-fast);
+}
+
+.lazlo-header__language-toggle.active .lazlo-header__language-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   LANGUAGE MENU
+========================================================= */
+
+.lazlo-header__language-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 150px;
+
+    padding: 5px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 7px;
+
+    box-shadow: var(--shadow-dropdown);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity var(--transition-fast),
+        visibility var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.lazlo-header__language-menu.active {
+    z-index: 1;
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.lazlo-header__language-menu button {
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: transparent;
+    color: var(--color-text);
+
+    text-align: left;
+
+    font-family: "Electrolize", sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast);
+}
+
+.lazlo-header__language-menu button:hover {
+    background: rgba(255, 208, 0, 0.15);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.lazlo-header__menu-toggle {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+    color: var(--color-text);
+
+    cursor: pointer;
+}
+
+.lazlo-header__hamburger {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.lazlo-header__hamburger span {
+    width: 22px;
+    height: 2px;
+
+    background: currentColor;
+}
+
+.lazlo-header__close {
+    display: none;
+
+    font-size: 30px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.lazlo-header__mobile-menu {
+    display: none;
+
+    background: var(--color-surface);
+
+    border-top: 1px solid var(--color-border);
+}
+
+.lazlo-header__mobile-menu nav {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 10px 25px;
+}
+
+.lazlo-header__mobile-menu a {
+    padding: 15px 0;
+
+    color: var(--color-text);
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--color-border);
+
+    font-family: "Electrolize", sans-serif;
+    font-size: 14px;
+}
+
+.lazlo-header__mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.lazlo-header__mobile-menu a:hover {
+    background: var(--brand-gradient);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.lazlo-header__mobile-menu.active {
+    display: block;
+}
+
+
+/* =========================================================
+   MOBILE SEARCH
+========================================================= */
+
+.lazlo-header__mobile-search {
+    display: none;
+
+    position: relative;
+
+    padding: 10px 20px;
+
+    background: var(--color-surface);
+
+    border-top: 1px solid var(--color-border);
+}
+
+.lazlo-header__mobile-search.active {
+    display: block;
+}
+
+.lazlo-header__mobile-search form {
+    display: flex;
+
+    width: 100%;
+}
+
+.lazlo-header__mobile-search input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--color-border);
+
+    border-right: none;
+
+    border-radius:
+        var(--radius-small) 0 0 var(--radius-small);
+
+    outline: none;
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    font-family: "Electrolize", sans-serif;
+}
+
+.lazlo-header__mobile-search button {
+    height: 40px;
+
+    padding: 0 15px;
+
+    border: none;
+
+    border-radius:
+        0 var(--radius-small) var(--radius-small) 0;
+
+    background: var(--color-text);
+    color: var(--color-background);
+
+    font-family: "Electrolize", sans-serif;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE SEARCH RESULTS
+========================================================= */
+
+.lazlo-header__mobile-search-results {
+    width: 100%;
+
+    margin-top: 8px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-dropdown);
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity var(--transition-fast),
+        visibility var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.lazlo-header__mobile-search-results.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .lazlo-header__main {
+        column-gap: 20px;
+
+        padding: 0 25px;
+    }
+
+    .lazlo-header__navigation a {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SWITCH TO MOBILE HEADER
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .lazlo-header__main {
+        display: flex;
+
+        justify-content: space-between;
+
+        padding: 0 20px;
+    }
+
+
+    .lazlo-header__navigation {
+        display: none;
+    }
+
+
+    .lazlo-header__search-form {
+        display: none;
+    }
+
+
+    .lazlo-header__search-icon {
+        display: flex;
+    }
+
+
+    .lazlo-header__menu-toggle {
+        display: flex;
+    }
+
+
+    .lazlo-header__actions {
+        margin-left: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 4px;
+    }
+
+
+    .lazlo-header__language-arrow {
+        display: none;
+    }
+
+
+    .lazlo-header__language-toggle {
+        padding: 0 8px;
+
+        border: none;
+
+        background: transparent;
+    }
+
+
+    .lazlo-header__menu-toggle.active .lazlo-header__hamburger {
+        display: none;
+    }
+
+    .lazlo-header__menu-toggle.active .lazlo-header__close {
+        display: block;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL SCREENS
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .lazlo-header__main {
+        padding: 0 15px;
+    }
+
+    .lazlo-header__logo {
+        font-size: 25px;
+    }
+
+    .lazlo-header__theme,
+    .lazlo-header__search-icon,
+    .lazlo-header__menu-toggle {
+        width: 34px;
+        height: 34px;
+    }
+
+    .lazlo-header__language-toggle {
+        height: 34px;
+    }
+
+
+    /* Smaller search images */
+    .lazlo-header__mobile-search-results a>img {
+        flex-basis: 46px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+}

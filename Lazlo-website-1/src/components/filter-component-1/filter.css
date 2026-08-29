@@ -1,0 +1,212 @@
+/* =========================================================
+   BRAND FILTER
+========================================================= */
+
+.brand-filter {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 20px auto 0;
+
+    padding: 0 20px;
+}
+
+
+/* =========================================================
+   FILTER INNER BAND
+========================================================= */
+
+.brand-filter__inner {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 6px;
+
+    overflow-x: auto;
+
+    background: var(--bg);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 8px;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.brand-filter__inner::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   FILTER BUTTON
+========================================================= */
+
+.brand-filter__item {
+    flex: 0 0 auto;
+
+    height: 38px;
+
+    padding: 0 18px;
+
+    border: 1px solid transparent;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--text-muted);
+
+    font-family: "Electrolize", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.brand-filter__item:hover {
+    color: var(--text);
+
+    background: var(--bg-light);
+
+    border-color: var(--color-border);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.brand-filter__item.active {
+    background: var(--brand-gradient);
+
+    color: #111111;
+
+    border-color: transparent;
+
+    box-shadow:
+        0 3px 10px rgba(255, 168, 0, 0.18);
+}
+
+
+/* =========================================================
+   ACTIVE HOVER
+========================================================= */
+
+.brand-filter__item.active:hover {
+    color: #111111;
+
+    background: var(--brand-gradient);
+
+    border-color: transparent;
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+[dir="rtl"] .brand-filter__inner {
+    direction: rtl;
+}
+
+[dir="rtl"] .brand-filter__item {
+    direction: rtl;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .brand-filter {
+        padding: 0 15px;
+
+        margin-top: 16px;
+    }
+
+    .brand-filter__inner {
+        justify-content: flex-start;
+
+        min-height: 50px;
+
+        gap: 6px;
+
+        padding: 5px;
+    }
+
+    .brand-filter__item {
+        height: 36px;
+
+        padding: 0 15px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .brand-filter {
+        padding: 0 10px;
+
+        margin-top: 14px;
+    }
+
+    .brand-filter__inner {
+        border-radius: 7px;
+
+        min-height: 48px;
+    }
+
+    .brand-filter__item {
+        height: 34px;
+
+        padding: 0 13px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.06em;
+    }
+
+}

@@ -1,0 +1,338 @@
+/* =========================================================
+LAZLO FOOTER
+========================================================= */
+
+.lazlo-footer {
+    width: 100%;
+
+    background: var(--color-background);
+
+    color: var(--color-text);
+
+    border-top: 1px solid var(--color-border);
+
+    font-family: "Electrolize", sans-serif;
+
+
+}
+
+/* =========================================================
+FOOTER MAIN
+========================================================= */
+
+.lazlo-footer__main {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 65px 40px 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+
+}
+
+/* =========================================================
+BRAND
+========================================================= */
+
+.lazlo-footer__brand {
+    max-width: 330px;
+}
+
+/* =========================================================
+LOGO
+========================================================= */
+
+.lazlo-footer__logo {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    background: var(--brand-gradient);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    font-family: "Electrolize", sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+
+}
+
+/* =========================================================
+DESCRIPTION
+========================================================= */
+
+.lazlo-footer__description {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+
+}
+
+/* =========================================================
+FOOTER COLUMN
+========================================================= */
+
+.lazlo-footer__column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+
+}
+
+/* =========================================================
+COLUMN TITLE
+========================================================= */
+
+.lazlo-footer__title {
+    margin: 0 0 18px;
+
+    color: var(--color-text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+
+}
+
+/* =========================================================
+FOOTER NAVIGATION
+========================================================= */
+
+.lazlo-footer__column nav {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+
+}
+
+.lazlo-footer__column nav a,
+.lazlo-footer__social a {
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+
+
+}
+
+.lazlo-footer__column nav a:hover,
+.lazlo-footer__social a:hover {
+    color: var(--color-text);
+
+    transform: translateX(3px);
+
+
+}
+
+/* =========================================================
+SOCIAL
+========================================================= */
+
+.lazlo-footer__social {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+
+}
+
+/* =========================================================
+FOOTER BOTTOM
+========================================================= */
+
+.lazlo-footer__bottom {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 18px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid var(--color-border);
+
+
+}
+
+/* =========================================================
+COPYRIGHT
+========================================================= */
+
+.lazlo-footer__copyright,
+.lazlo-footer__tagline {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+
+}
+
+/* =========================================================
+TAGLINE
+========================================================= */
+
+.lazlo-footer__tagline {
+    color: var(--color-text);
+
+    letter-spacing: 0.04em;
+
+
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .lazlo-footer__main {
+        grid-template-columns:
+            1.5fr 1fr 1fr;
+
+        gap: 40px;
+    }
+
+
+    .lazlo-footer__brand {
+        grid-column: 1 / -1;
+
+        max-width: 500px;
+    }
+
+
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .lazlo-footer__main {
+        padding: 50px 25px 40px;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 40px 25px;
+    }
+
+
+    .lazlo-footer__brand {
+        grid-column: 1 / -1;
+
+        max-width: 100%;
+    }
+
+
+    .lazlo-footer__logo {
+        font-size: 30px;
+    }
+
+
+    .lazlo-footer__description {
+        max-width: 360px;
+
+        font-size: 12px;
+    }
+
+
+    .lazlo-footer__bottom {
+        padding: 18px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .lazlo-footer__main {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .lazlo-footer__brand {
+        grid-column: auto;
+    }
+
+
+    .lazlo-footer__bottom {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+}

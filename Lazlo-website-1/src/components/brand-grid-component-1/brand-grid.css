@@ -1,0 +1,107 @@
+.brand-card {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: var(--bg-dark);
+
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.02),
+        0 8px 24px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+
+/* Image */
+.brand-card__image {
+    position: absolute;
+    inset: -8px;
+
+    z-index: 0;
+
+    transition: transform 300ms ease;
+}
+
+.brand-card__image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Dark + blur overlay */
+.brand-card__overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transition:
+        background-color 180ms ease;
+}
+
+
+/* Brand name */
+.brand-card .brand-name {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    text-align: center;
+}
+
+
+/* Hover */
+.brand-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.04),
+        0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Image zoom */
+.brand-card:hover .brand-card__image {
+    transform: scale(1.05);
+}
+
+
+/* Reveal a little more image on hover */
+.brand-card:hover .brand-card__overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+}
