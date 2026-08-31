@@ -1,0 +1,43 @@
+:root {
+    /* BRAND COLORS */
+    --color-one: hsl(25, 100%, 55%);
+    --color-two: hsl(35, 100%, 64%);
+
+    /* BRAND GRADIENT */
+    --brand-gradient: linear-gradient(135deg,
+            #FFD000 0%,
+            #FFB800 45%,
+            #FF8A00 100%);
+
+    /* BACKGROUNG COLORS */
+    --bg-dark: hsl(0, 0%, 100%);
+    --bg: hsl(0, 0%, 95%);
+    --bg-light: hsl(0, 0%, 100%);
+
+    /* TEXT COLORS */
+    --text: hsl(0, 0%, 5%);
+    --text-muted: hsl(0, 0%, 60%);
+
+    --color-border: #e5e5e5;
+}
+
+:root[data-theme="dark"] {
+    /* BRAND COLORS */
+    --color-one: hsl(25, 100%, 55%);
+    --color-two: hsl(35, 100%, 64%);
+
+    /* BRAND GRADIENT */
+    --brand-gradient: linear-gradient(135deg,
+            #FFD000 0%,
+            #FFB800 45%,
+            #FF8A00 100%);
+
+    /* BACKGROUNG COLORS */
+    --bg-dark: hsl(0, 0%, 0%);
+    --bg: hsl(0, 0%, 5%);
+    --bg-light: hsl(0, 0%, 10%);
+
+    /* TEXT COLORS */
+    --text: hsl(0, 0%, 95%);
+    --text-muted: hsl(0, 0%, 40%);
+}

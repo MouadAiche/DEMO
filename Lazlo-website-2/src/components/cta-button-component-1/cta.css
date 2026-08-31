@@ -1,0 +1,184 @@
+/* =========================================================
+   PRODUCTS CTA
+========================================================= */
+
+.products-cta {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 28px auto 0 auto;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.products-cta__button {
+    min-height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 0 22px;
+
+    border: 1px solid transparent;
+
+    border-radius: 7px;
+
+    background: var(--brand-gradient);
+
+    color: #111111;
+
+    font-family: "Electrolize", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 4px 12px rgba(255, 168, 0, 0.16);
+
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        filter 180ms ease;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.products-cta__button svg {
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition: transform 180ms ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.products-cta__button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(255, 168, 0, 0.24);
+
+    filter: brightness(1.03);
+}
+
+.products-cta__button:hover svg {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.products-cta__button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 3px 8px rgba(255, 168, 0, 0.18);
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+[dir="rtl"] .products-cta__button {
+    direction: rtl;
+}
+
+[dir="rtl"] .products-cta__button svg {
+    transform: rotate(180deg);
+}
+
+[dir="rtl"] .products-cta__button:hover svg {
+    transform: rotate(180deg) translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .products-cta {
+        margin-top: 24px;
+
+        padding: 0 15px;
+    }
+
+    .products-cta__button {
+        min-height: 44px;
+
+        padding: 0 20px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .products-cta {
+        margin-top: 20px;
+
+        padding: 0 10px;
+    }
+
+    .products-cta__button {
+        width: 100%;
+
+        max-width: 260px;
+
+        min-height: 44px;
+
+        padding: 0 18px;
+
+        font-size: 11px;
+    }
+
+}

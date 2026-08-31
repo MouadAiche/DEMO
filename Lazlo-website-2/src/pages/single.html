@@ -1,0 +1,295 @@
+---
+permalink: /single/
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lazlo — Better Tech, Smarter Choices</title>
+    <meta name="description" content="Discover better laptops, smarter accessories, and the best tech deals.">
+</head>
+
+<body>
+
+    <header class="lazlo-header lazlo-header--inner-page" id="lazloHeader">
+
+        <div class="lazlo-header__main">
+
+            <!-- =====================================================
+             BACK BUTTON
+        ====================================================== -->
+
+            <a href="javascript:history.back()" class="lazlo-header__back" aria-label="Go back">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </a>
+
+
+            <!-- =====================================================
+             CENTERED LOGO
+        ====================================================== -->
+
+            <a href="/" class="lazlo-header__logo" aria-label="Lazlo home">
+                lazlo
+            </a>
+
+
+            <!-- =====================================================
+             HEADER ACTIONS
+        ====================================================== -->
+
+            <div class="lazlo-header__actions">
+
+                <!-- =================================================
+                 SEARCH
+            ================================================== -->
+
+                <div class="lazlo-header__search">
+
+                    <!-- Search icon only -->
+                    <button class="lazlo-header__search-icon" id="lazloSearchToggle" type="button"
+                        aria-label="Open search" aria-expanded="false">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="11" cy="11" r="6"></circle>
+
+                            <line x1="16" y1="16" x2="21" y2="21"></line>
+                        </svg>
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                 THEME
+            ================================================== -->
+
+                <button class="lazlo-header__theme" id="lazloThemeToggle" type="button" aria-label="Toggle dark mode">
+
+                    <!-- Sun -->
+                    <svg class="lazlo-header__sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+
+                        <line x1="12" y1="2" x2="12" y2="5"></line>
+
+                        <line x1="12" y1="19" x2="12" y2="22"></line>
+
+                        <line x1="2" y1="12" x2="5" y2="12"></line>
+
+                        <line x1="19" y1="12" x2="22" y2="12"></line>
+
+                        <line x1="4.9" y1="4.9" x2="7" y2="7"></line>
+
+                        <line x1="17" y1="17" x2="19.1" y2="19.1"></line>
+
+                        <line x1="17" y1="7" x2="19.1" y2="4.9"></line>
+
+                        <line x1="4.9" y1="19.1" x2="7" y2="17"></line>
+                    </svg>
+
+
+                    <!-- Moon -->
+                    <svg class="lazlo-header__moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3A6.7 6.7 0 0 0 21 12.8Z"></path>
+                    </svg>
+
+                </button>
+
+
+                <!-- =================================================
+                 LANGUAGE
+            ================================================== -->
+
+                <div class="lazlo-header__language">
+
+                    <button class="lazlo-header__language-toggle" id="lazloLanguageToggle" type="button"
+                        aria-expanded="false">
+
+                        <span id="lazloCurrentLanguage">
+                            EN
+                        </span>
+
+                        <svg class="lazlo-header__language-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+
+                    </button>
+
+
+                    <!-- Language menu -->
+                    <div class="lazlo-header__language-menu" id="lazloLanguageMenu">
+
+                        <button type="button" data-language="EN">
+                            English
+                        </button>
+
+                        <button type="button" data-language="FR">
+                            Français
+                        </button>
+
+                        <button type="button" data-language="AR">
+                            العربية
+                        </button>
+
+                        <button type="button" data-language="ES">
+                            Español
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================================
+         SEARCH PANEL
+         Opens when the search icon is clicked
+    ========================================================== -->
+
+        <div class="lazlo-header__mobile-search" id="lazloMobileSearch">
+
+            <form id="lazloMobileSearchForm">
+
+                <input id="lazloMobileSearchInput" type="search" placeholder="Search products..."
+                    aria-label="Search products" autocomplete="off">
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+
+            <!-- =====================================================
+             SEARCH RESULTS
+        ====================================================== -->
+
+            <div class="lazlo-header__mobile-search-results" id="lazloMobileSearchResults">
+
+                <!-- Product 1 -->
+                <a href="#">
+
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=120&q=80"
+                        alt="Lenovo ThinkPad X1">
+
+                    <div>
+                        <strong>
+                            Lenovo ThinkPad X1
+                        </strong>
+
+                        <span>
+                            Laptop
+                        </span>
+                    </div>
+
+                </a>
+
+
+                <!-- Product 2 -->
+                <a href="#">
+
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=120&q=80"
+                        alt="MacBook Air M3">
+
+                    <div>
+                        <strong>
+                            MacBook Air M3
+                        </strong>
+
+                        <span>
+                            Laptop
+                        </span>
+                    </div>
+
+                </a>
+
+
+                <!-- Product 3 -->
+                <a href="#">
+
+                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=120&q=80"
+                        alt="ASUS ROG Strix">
+
+                    <div>
+                        <strong>
+                            ASUS ROG Strix
+                        </strong>
+
+                        <span>
+                            Gaming Laptop
+                        </span>
+                    </div>
+
+                </a>
+
+
+                <!-- Product 4 -->
+                <a href="#">
+
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=120&q=80"
+                        alt="HP Pavilion 15">
+
+                    <div>
+                        <strong>
+                            HP Pavilion 15
+                        </strong>
+
+                        <span>
+                            Laptop
+                        </span>
+                    </div>
+
+                </a>
+
+
+                <!-- Product 5 -->
+                <a href="#">
+
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=120&q=80"
+                        alt="Dell XPS 13">
+
+                    <div>
+                        <strong>
+                            Dell XPS 13
+                        </strong>
+
+                        <span>
+                            Laptop
+                        </span>
+                    </div>
+
+                </a>
+
+
+                <!-- See all results -->
+                <a href="#" class="lazlo-header__mobile-search-see-all">
+                    See all results
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        {% include '../components/single-product-1/single-product.html' %}
+
+    </main>
+
+    {% include '../components/footer-component-1/footer.html' %}
+
+    <script type="module" src="/js/main.js"></script>
+
+</body>
+
+</html>
