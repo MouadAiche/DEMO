@@ -238,20 +238,64 @@
             () => {
 
                 const isOpen =
-                    mobileMenu.classList.toggle(
-                        "active"
-                    );
-
+                    mobileMenu.classList.toggle("active");
 
                 menuButton.classList.toggle(
-                    "active"
+                    "active",
+                    isOpen
                 );
-
 
                 menuButton.setAttribute(
                     "aria-expanded",
                     isOpen
                 );
+
+            }
+        );
+
+
+        // Close mobile menu when a navigation link is clicked
+        mobileMenu.querySelectorAll("a").forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    mobileMenu.classList.remove("active");
+
+                    menuButton.classList.remove("active");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+
+        // Close mobile menu when clicking outside
+        document.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    !mobileMenu.contains(event.target) &&
+                    !menuButton.contains(event.target)
+                ) {
+
+                    mobileMenu.classList.remove("active");
+
+                    menuButton.classList.remove("active");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
 
             }
         );
