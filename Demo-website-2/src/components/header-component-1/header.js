@@ -28,6 +28,10 @@
         header.querySelector(".demo-header__theme");
 
 
+    /* ---------------------------------------------
+       Apply saved theme when page loads
+    --------------------------------------------- */
+
     const savedTheme =
         localStorage.getItem("demo-theme");
 
@@ -41,6 +45,18 @@
 
     }
 
+    else {
+
+        root.removeAttribute(
+            "data-theme"
+        );
+
+    }
+
+
+    /* ---------------------------------------------
+       Toggle theme
+    --------------------------------------------- */
 
     if (themeButton) {
 
@@ -84,6 +100,41 @@
         );
 
     }
+
+
+    /* ---------------------------------------------
+       Synchronize theme between open pages/tabs
+    --------------------------------------------- */
+
+    window.addEventListener(
+        "storage",
+        (event) => {
+
+            if (event.key !== "demo-theme") {
+                return;
+            }
+
+
+            if (event.newValue === "dark") {
+
+                root.setAttribute(
+                    "data-theme",
+                    "dark"
+                );
+
+            }
+
+            else {
+
+                root.removeAttribute(
+                    "data-theme"
+                );
+
+            }
+
+        }
+    );
+
 
 
 
